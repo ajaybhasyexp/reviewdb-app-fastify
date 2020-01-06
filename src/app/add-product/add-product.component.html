@@ -1,0 +1,73 @@
+<div class="row">
+    <div class="col-sm-10 col-md-9 no-float center-block">
+        
+        <h4 class="sub-heading">New Review</h4>
+        <hr>
+
+        <div class="new-review-wrap">
+            <div class="media header-info">
+                <div class="media-left review-media">
+                    <div class="fileupload" data-provides="fileupload">
+                        <div class="fileupload-preview thumbnail" data-trigger="fileupload" >
+                            <span class="btn btn-file-upload btn-file">
+                                <span class="fileupload-exists"><i class="fa fa-camera"></i></span>
+                                <input type="file">
+                            </span>
+                        </div>
+                        <div class="text-center">
+                            <a href="#" class="btn fileupload-exists btn-review-pic-remove" data-dismiss="fileupload">Remove</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="media-body">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Review Title">
+                    </div>
+                    <div class="form-group">
+                        <textarea cols="10" rows="4" class="form-control" placeholder="Description"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control tags" id="useful-links" value="http://www.imdb.com,http://www.rottentotmatoes.com" placeholder="Useful Links"/>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group review-description clearfix">
+                <div class="summernote">Type your description</div>
+                <button class="btn btn-success btn-new-review-description" type="submit"><i class="fa fa-plus"></i></button>
+            </div>
+
+            <div class="form-group">
+                <div class="row">
+                    <div class="col-sm-6 col-md-4">
+                        <div class="form-group">
+                            <label for="">Category</label>
+                            <select class="form-control">
+                                <option value="">Entertainment</option>
+                                <option value="">Photography</option>
+                                <option value="">Shopping</option>
+                                <option value="">Travelling</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-md-8">
+                        <label>Rating</label>
+                        <input id="input-1" class="rating" data-size="xs" data-min="0" data-max="5" data-step="1">
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>Tags</label>
+                <input type="text" class="form-control tags" id="tags" value="tag1, tag2, tag3" />
+            </div>
+
+            <hr>
+
+            <div class="footer-btn-wrap">
+                <button class="btn btn-default" type="submit">Submit</button>
+            </div>
+        </div>
+        <!-- /.new-review-wrap -->
+    </div>
+</div>
