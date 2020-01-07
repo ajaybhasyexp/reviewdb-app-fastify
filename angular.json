@@ -23,6 +23,7 @@
             "styles": [
               "src/styles.css",
               "src/assets/themestyles/bootstrap.css",
+              "src/assets/themestyles/mat-theme.scss",
               "node_modules/font-awesome/css/font-awesome.css",
               "src/assets/themestyles/bs-overrides.css",
               "src/assets/themestyles/style.css",
