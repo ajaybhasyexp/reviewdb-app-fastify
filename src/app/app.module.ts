@@ -1,7 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, APP_INITIALIZER } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SearchComponent } from './components/search/search.component';
@@ -20,6 +19,7 @@ import { AppConfigService } from './core/services/app-config.service';
 import { HttpBaseService } from './core/services/httpbase.service';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { from } from 'rxjs';
+import { SearchService } from './services/search.service';
 
 @NgModule({
   declarations: [
@@ -48,7 +48,8 @@ import { from } from 'rxjs';
       multi: true
     },
     ProductService,
-    HttpBaseService
+    HttpBaseService,
+    SearchService
   ],
   bootstrap: [AppComponent]
 })

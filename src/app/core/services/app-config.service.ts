@@ -15,7 +15,6 @@ export class AppConfigService {
         private httpService: HttpClient) { }
 
     loadConfiguration() {
-        debugger;
         return new Promise((resolve, reject) => {
             this.httpService
                 .get(this.configUrl).pipe(catchError((error: any) => {

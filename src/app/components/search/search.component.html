@@ -5,8 +5,8 @@
         <h2 class="master-header">Search For {{searchText}}</h2>
 
         <div class="input-group input-group-lg master-search">
-            <input [(ngModel)]="searchText" type="text" class="form-control"
-                placeholder="eg: Avengers Age of Ultron Review">
+            <input [(ngModel)]="searchText" type="text" (keyup)="searchTerm$.next($event.target.value)"
+                class="form-control" placeholder="eg: Avengers Age of Ultron Review">
             <div class="input-group-btn">
                 <button type="button" class="btn btn-default" (click)="slideToggle()" id="master-category-dropdown"><i
                         class="fa fa-chevron-down"></i></button>
@@ -17,7 +17,13 @@
 
         <!-- Suggestions -->
         <div *ngIf="suggestionsVisibility" class="master-search-suggestions">
-            <a class="suggestion" href="#">
+            <a *ngFor="let prod of products" class="suggestion" href="#">
+                <img class="suggestion-image" height="34" src="{{prod.imageUrl}}">
+                <div class="suggestion-title u-textTruncate">{{prod.name}}</div>
+                <div class="suggestion-category">Shopping</div>
+                <div class="suggestion-extra text-truncate">{{prod.description}}</div>
+            </a>
+            <!-- <a class="suggestion" href="#">
                 <img class="suggestion-image" height="34" src="assets/images/sample-cat-1.png">
                 <div class="suggestion-title u-textTruncate">Name of the shop</div>
                 <div class="suggestion-category">Shopping</div>
@@ -28,13 +34,7 @@
                 <div class="suggestion-title u-textTruncate">Name of the shop</div>
                 <div class="suggestion-category">Shopping</div>
                 <div class="suggestion-extra text-truncate">Lorem ipsum dolor sit amet.</div>
-            </a>
-            <a class="suggestion" href="#">
-                <img class="suggestion-image" height="34" src="assets/images/sample-cat-1.png">
-                <div class="suggestion-title u-textTruncate">Name of the shop</div>
-                <div class="suggestion-category">Shopping</div>
-                <div class="suggestion-extra text-truncate">Lorem ipsum dolor sit amet.</div>
-            </a>
+            </a> -->
         </div>
         <!-- /.master-search-suggestions -->
 
