@@ -20,6 +20,23 @@ import { HttpBaseService } from './core/services/httpbase.service';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { from } from 'rxjs';
 import { SearchService } from './services/search.service';
+import { SocialLoginModule, AuthServiceConfig } from 'angularx-social-login';
+import { GoogleLoginProvider, FacebookLoginProvider } from 'angularx-social-login';
+
+const config = new AuthServiceConfig([
+  // {
+  //   id: GoogleLoginProvider.PROVIDER_ID,
+  //   provider: new GoogleLoginProvider('Google-OAuth-Client-Id')
+  // },
+  {
+    id: FacebookLoginProvider.PROVIDER_ID,
+    provider: new FacebookLoginProvider('1219653058045071')
+  }
+]);
+
+export function provideConfig() {
+  return config;
+}
 
 @NgModule({
   declarations: [
@@ -46,6 +63,10 @@ import { SearchService } from './services/search.service';
       useFactory: initAppConfig,
       deps: [AppConfigService],
       multi: true
+    },
+    {
+      provide: AuthServiceConfig,
+      useFactory: provideConfig
     },
     ProductService,
     HttpBaseService,

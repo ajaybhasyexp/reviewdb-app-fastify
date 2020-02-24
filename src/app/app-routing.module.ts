@@ -5,7 +5,7 @@ import { AddProductComponent } from './components/add-product/add-product.compon
 
 const routes: Routes = [
   {
-    path: 'search',
+    path: '',
     component: SearchComponent,
   },
   {
