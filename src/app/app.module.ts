@@ -20,8 +20,7 @@ import { HttpBaseService } from './core/services/httpbase.service';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { from } from 'rxjs';
 import { SearchService } from './services/search.service';
-import { SocialLoginModule, AuthServiceConfig } from 'angularx-social-login';
-import { GoogleLoginProvider, FacebookLoginProvider } from 'angularx-social-login';
+import { SocialLoginModule, AuthServiceConfig, FacebookLoginProvider } from 'angularx-social-login';
 
 const config = new AuthServiceConfig([
   // {
@@ -55,6 +54,7 @@ export function provideConfig() {
     MatInputModule,
     FormsModule,
     HttpClientModule,
+    SocialLoginModule
   ],
   providers: [
     AppConfigService,
