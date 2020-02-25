@@ -20,6 +20,7 @@ import { HttpBaseService } from './core/services/httpbase.service';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { from } from 'rxjs';
 import { SearchService } from './services/search.service';
+import { UserService } from './services/user.service';
 import { SocialLoginModule, AuthServiceConfig, FacebookLoginProvider } from 'angularx-social-login';
 
 const config = new AuthServiceConfig([
@@ -70,7 +71,8 @@ export function provideConfig() {
     },
     ProductService,
     HttpBaseService,
-    SearchService
+    SearchService,
+    UserService
   ],
   bootstrap: [AppComponent]
 })

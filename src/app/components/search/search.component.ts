@@ -45,7 +45,7 @@ export class SearchComponent implements OnInit {
   slideToggle() {
     $('#master-categories').slideToggle();
   }
-  
+
   searchProds() {
     // this.searchService.search(this.searchTerm$).subscribe(response => {
     //   this.products = response;

@@ -24,8 +24,21 @@
         <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav navbar-right">
                 <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                        aria-expanded="false">
+                        <img class="profile-pic-holder" *ngIf="loggedIn" src="{{user.photoUrl}}" alt="Avatar">
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li>
+                            My Profile
+                        </li>
+                    </ul>
+                </li>
+                <li class="dropdown">
                     <a *ngIf="!loggedIn" href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
                         aria-haspopup="true" aria-expanded="false">Login</a>
+                    <a *ngIf="loggedIn" href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
+                        aria-haspopup="true" aria-expanded="false">{{user.name}}</a>
                     <ul class="dropdown-menu login-form">
                         <!-- <li class="login-fields">
                             <div class="form-group">
@@ -39,9 +52,12 @@
                             </div>
                         </li> -->
                         <!-- <li role="separator" class="divider"></li> -->
-                        <li class="login-fields"><button (click)="signInWithFB()"
+                        <li *ngIf="!loggedIn" class="login-fields"><button (click)="signInWithFB()"
                                 class="btn btn-facebook btn-block">Login With
                                 Facebook</button></li>
+
+                        <li *ngIf="loggedIn" class="login-fields"><button (click)="signOut()"
+                                class="btn btn-facebook btn-block">Sign Out</button></li>
                     </ul>
                 </li>
                 <!-- <li class="dropdown">
@@ -56,7 +72,7 @@
                     </ul>
                 </li> -->
             </ul>
-            <!-- <button class="btn btn-navbar" type="submit">Write A Review</button> -->
+            <button *ngIf="loggedIn" class="btn btn-navbar" type="submit">Write A Review</button>
         </div>
     </div>
 </nav>
