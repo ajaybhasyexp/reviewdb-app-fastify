@@ -22,6 +22,8 @@ import { from } from 'rxjs';
 import { SearchService } from './services/search.service';
 import { UserService } from './services/user.service';
 import { SocialLoginModule, AuthServiceConfig, FacebookLoginProvider } from 'angularx-social-login';
+import { AddReviewComponent } from './components/add-review/add-review.component';
+import { RatingComponent } from './components/rating/rating.component';
 
 const config = new AuthServiceConfig([
   // {
@@ -43,7 +45,9 @@ export function provideConfig() {
     AppComponent,
     SearchComponent,
     TopNavComponent,
-    AddProductComponent
+    AddProductComponent,
+    AddReviewComponent,
+    RatingComponent
   ],
   imports: [
     BrowserModule,
