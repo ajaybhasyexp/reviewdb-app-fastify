@@ -1,0 +1,50 @@
+/**FLOATS**/
+.no-float { float: none; }
+
+
+
+/**TYPO**/
+.uppercase { text-transform: uppercase; }
+.text-truncate {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+
+
+/**BORDER**/
+.no-border        { border-width:        0; }
+.no-border-top    { border-width-top:    0; }
+.no-border-right  { border-width-right:  0; }
+.no-border-bottom { border-width-bottom: 0; }
+.no-border-left   { border-width-left:   0; }
+
+
+
+/**PADDING**/
+.no-padding        { padding:        0; }
+.no-padding-top    { padding-top:    0; }
+.no-padding-right  { padding-right:  0; }
+.no-padding-bottom { padding-bottom: 0; }
+.no-padding-left   { padding-left:   0; }
+@media (min-width: 768px) {
+	.only-xs-padding-left { padding-left: 0; }
+}
+
+
+
+/**MARGIN**/
+.no-margin        { margin:        0; }
+.no-margin-top    { margin-top:    0; }
+.no-margin-right  { margin-right:  0; }
+.no-margin-bottom { margin-bottom: 0; }
+.no-margin-left   { margin-left:   0; }
+
+
+
+/**POSITION**/
+.position-absolute { position: absolute; }
+.position-relative { position: relative; }
+.position-fixed    { position: fixed;    }
+.position-static   { position: static;   }
