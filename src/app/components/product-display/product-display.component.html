@@ -1,9 +1,174 @@
-<div class="row">
+<!-- <div class="row">
     <div class="col-md-9">
         <div class="search-results">
             <div class="media search-result">
+                <div class="media-left">
+                    <a href="#">
+                        <img class="media-object" [src]="selectedProduct.image_800" alt="Category Image">
+                    </a>
+                </div>
+                <div class="media-body">
+                    <h4 class="media-heading"><a href="#">{{selectedProduct.name}}</a></h4>
+                    <p>{{selectedProduct.description}}</p>
+                    <div>
+                        <button *ngFor="let spec of selectedProduct.specs" type="button"
+                            class="btn btn-default btn-xs margin-3">{{spec}}</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div> -->
 
+<div class="col-lg-12">
+    <div class="col-lg-10 div_productlist_parent">
+        <div class="col-lg-5 border-right">
+            <img class="media-object img_product-inproductlisting" [src]="selectedProduct.image_800"
+                alt="Category Image">
+        </div>
+        <div class="col-lg-7">
+            <h4 class="media-heading"><a class="text-deoration-none" href="#">{{selectedProduct.name}}</a></h4>
+            <p class="margin-top-20">{{selectedProduct.description}}</p>
+            <div>
+                <button *ngFor="let spec of selectedProduct.specs" type="button"
+                    class="btn btn-default btn-xs margin-3">{{spec}}</button>
             </div>
         </div>
     </div>
 </div>
+
+<!-- <hr>
+<div class="col-lg-12">
+    <div class="col-lg-12">
+        <div class="col-lg-10">
+            <div class="col-lg-1">
+                <img
+                    src="https://images-eu.ssl-images-amazon.com/images/S/amazon-avatars-global/default._CR0,0,1024,1024_SX48_.png">
+            </div>
+            <div class="col-lg-11">
+                <span class="span_custname">Deepak K V</span>
+            </div>
+        </div>
+
+        <div class="col-lg-12 padding-30">
+
+            <span>Reviewed in India on 24 July 2019</span>
+        </div>
+    </div>
+
+
+</div> -->
+<div class="row">
+    <div class="col-md-9">
+        <hr>
+        <div class="search-results">
+            <div class="media search-result">
+                <div class="media-left">
+                    <a href="#">
+                        <img class="media-object" src="assets/images/sample-cat-4.png" alt="Category Image">
+                    </a>
+                </div>
+                <div class="media-body">
+                    <h4 class="media-heading"><a href="#">Lulu</a></h4>
+                    <div class="progress">
+                        <div class="progress-bar progress-bar-success" title="Good Reviews" style="width: 70%">
+                            <span class="sr-only">35% Complete (success)</span>
+                        </div>
+                        <div class="progress-bar progress-bar-warning" style="width: 15%">
+                            <span class="sr-only">20% Complete (warning)</span>
+                        </div>
+                        <div class="progress-bar progress-bar-danger" style="width: 15%">
+                            <span class="sr-only">10% Complete (danger)</span>
+                        </div>
+                    </div>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magnam quia quaerat, placeat iusto
+                        nemo. Fugiat architecto omnis, unde quam non eaque expedita laborum ea, nam asperiores vero qui
+                        nihil quaerat?</p>
+                    <p>
+                        <button type="button" title="Views" class="btn btn-default btn-xs"><i class="fa fa-eye"></i>
+                            126</button>
+                        <button type="button" title="Likes" class="btn btn-default btn-xs"><i
+                                class="fa fa-thumbs-up"></i> 154</button>
+                    </p>
+                    <div>
+                        <button type="button" class="btn btn-default btn-xs">Tag 1</button>
+                        <button type="button" class="btn btn-default btn-xs">Tag 2</button>
+                        <button type="button" class="btn btn-default btn-xs">Tag 3</button>
+                        <!-- <a class="tags" href="#">Tag 1</a> -->
+                    </div>
+                </div>
+            </div>
+            <div class="media search-result">
+                <div class="media-left">
+                    <a href="#">
+                        <img class="media-object" src="assets/images/sample-cat-1.png" alt="Category Image">
+                    </a>
+                </div>
+                <div class="media-body">
+                    <h4 class="media-heading"><a href="#">Pothys</a></h4>
+                    <div class="progress">
+                        <div class="progress-bar progress-bar-success" style="width: 50%">
+                            <span class="sr-only">35% Complete (success)</span>
+                        </div>
+                        <div class="progress-bar progress-bar-warning" style="width: 25%">
+                            <span class="sr-only">20% Complete (warning)</span>
+                        </div>
+                        <div class="progress-bar progress-bar-danger" style="width: 25%">
+                            <span class="sr-only">10% Complete (danger)</span>
+                        </div>
+                    </div>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magnam quia quaerat, placeat iusto
+                        nemo. Fugiat architecto omnis, unde quam non eaque expedita laborum ea, nam asperiores vero qui
+                        nihil quaerat?</p>
+                    <p>
+                        <button type="button" title="Views" class="btn btn-default btn-xs"><i class="fa fa-eye"></i>
+                            126</button>
+                        <button type="button" title="Likes" class="btn btn-default btn-xs"><i
+                                class="fa fa-thumbs-up"></i> 154</button>
+                    </p>
+                    <div>
+                        <button type="button" class="btn btn-default btn-xs">Tag 1</button>
+                        <button type="button" class="btn btn-default btn-xs">Tag 2</button>
+                        <button type="button" class="btn btn-default btn-xs">Tag 3</button>
+                        <!-- <a class="tags" href="#">Tag 1</a> -->
+                    </div>
+                </div>
+            </div>
+            <div class="media search-result">
+                <div class="media-left">
+                    <a href="#">
+                        <img class="media-object" src="assets/images/sample-cat-5.png" alt="Category Image">
+                    </a>
+                </div>
+                <div class="media-body">
+                    <h4 class="media-heading"><a href="#">Oberon</a></h4>
+                    <div class="progress">
+                        <div class="progress-bar progress-bar-success" style="width: 20%">
+                            <span class="sr-only">35% Complete (success)</span>
+                        </div>
+                        <div class="progress-bar progress-bar-warning" style="width: 40%">
+                            <span class="sr-only">20% Complete (warning)</span>
+                        </div>
+                        <div class="progress-bar progress-bar-danger" style="width: 40%">
+                            <span class="sr-only">10% Complete (danger)</span>
+                        </div>
+                    </div>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magnam quia quaerat, placeat iusto
+                        nemo. Fugiat architecto omnis, unde quam non eaque expedita laborum ea, nam asperiores vero qui
+                        nihil quaerat?</p>
+                    <p>
+                        <button type="button" title="Views" class="btn btn-default btn-xs"><i class="fa fa-eye"></i>
+                            126</button>
+                        <button type="button" title="Likes" class="btn btn-default btn-xs"><i
+                                class="fa fa-thumbs-up"></i> 154</button>
+                    </p>
+                    <div>
+                        <button type="button" class="btn btn-default btn-xs">Tag 1</button>
+                        <button type="button" class="btn btn-default btn-xs">Tag 2</button>
+                        <button type="button" class="btn btn-default btn-xs">Tag 3</button>
+                        <!-- <a class="tags" href="#">Tag 1</a> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>

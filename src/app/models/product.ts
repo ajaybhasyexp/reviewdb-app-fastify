@@ -4,4 +4,7 @@ export class Product {
     description: string;
     imageUrl: string;
     maximumRetailPrice: string;
+    image_400: string;
+    image_800: string;
+    specs: [string];
 }
