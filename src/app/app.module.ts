@@ -24,6 +24,7 @@ import { UserService } from './services/user.service';
 import { SocialLoginModule, AuthServiceConfig, FacebookLoginProvider } from 'angularx-social-login';
 import { AddReviewComponent } from './components/add-review/add-review.component';
 import { RatingComponent } from './components/rating/rating.component';
+import { ProductDisplayComponent } from './components/product-display/product-display.component';
 
 const config = new AuthServiceConfig([
   // {
@@ -47,7 +48,8 @@ export function provideConfig() {
     TopNavComponent,
     AddProductComponent,
     AddReviewComponent,
-    RatingComponent
+    RatingComponent,
+    ProductDisplayComponent
   ],
   imports: [
     BrowserModule,
