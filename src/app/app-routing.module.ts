@@ -10,6 +10,10 @@ const routes: Routes = [
     component: SearchComponent,
   },
   {
+    path: 'search',
+    component: SearchComponent,
+  },
+  {
     path: 'review',
     component: AddReviewComponent
   },

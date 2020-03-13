@@ -1,11 +1,19 @@
-<div class="container">
-
+<div class="row">
+    <header class="modalheader">
+        <div class="div_modalHeader">
+            <span class="heading_modal">Add New Review</span>
+            <div role="button" class="btn_close_modal" (click)="CloseAddReviewModal()">
+                <span>&times;</span>
+            </div>
+        </div>
+    </header>
+</div>
+<hr>
+<div class="container padding-15">
     <div class="row">
         <div class="col-sm-10 col-md-9 no-float center-block">
-
-            <h4 class="sub-heading">New Review</h4>
-            <hr>
-
+            <!-- <h4 class="sub-heading">New Review</h4>
+            <hr> -->
             <div class="new-review-wrap">
                 <div class="media header-info">
                     <div class="media-left review-media">
@@ -24,23 +32,17 @@
                     </div>
                     <div class="media-body">
                         <div class="form-group">
-                            <input type="text" class="form-control" placeholder="Search product here">
-                        </div>
-                        <div class="form-group">
                             <input type="text" class="form-control" placeholder="Review Title">
                         </div>
                         <div class="form-group">
                             <textarea cols="10" rows="4" class="form-control" placeholder="Description"></textarea>
                         </div>
-                        <!-- <div class="form-group">
-                            <input type="text" class="form-control tags" id="useful-links"
-                                value="http://www.imdb.com,http://www.rottentotmatoes.com" placeholder="Useful Links" />
-                        </div> -->
                     </div>
                 </div>
 
                 <div class="form-group review-description clearfix">
-                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Write detailed review here"></textarea>
+                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"
+                        placeholder="Write detailed review here"></textarea>
                     <!-- <button class="btn btn-success btn-new-review-description" type="submit"><i class="fa fa-plus"></i></button> -->
                 </div>
 

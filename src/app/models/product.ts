@@ -7,4 +7,5 @@ export class Product {
     image_400: string;
     image_800: string;
     specs: [string];
+    sourceId: string;
 }

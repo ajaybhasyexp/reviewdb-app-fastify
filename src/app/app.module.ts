@@ -12,6 +12,7 @@ import { MatIconModule } from '@angular/material/icon';
 import {
   MatFormFieldModule,
   MatInputModule,
+  MatDialog
 } from '@angular/material';
 
 import { ProductService } from './services/product.service';
@@ -25,6 +26,7 @@ import { SocialLoginModule, AuthServiceConfig, FacebookLoginProvider } from 'ang
 import { AddReviewComponent } from './components/add-review/add-review.component';
 import { RatingComponent } from './components/rating/rating.component';
 import { ProductDisplayComponent } from './components/product-display/product-display.component';
+import { MaterialModule } from './material.module';
 
 const config = new AuthServiceConfig([
   // {
@@ -61,7 +63,8 @@ export function provideConfig() {
     MatInputModule,
     FormsModule,
     HttpClientModule,
-    SocialLoginModule
+    SocialLoginModule,
+    MaterialModule
   ],
   providers: [
     AppConfigService,

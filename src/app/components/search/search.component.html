@@ -17,24 +17,12 @@
 
         <!-- Suggestions -->
         <div *ngIf="suggestionsVisibility" class="master-search-suggestions">
-            <a *ngFor="let prod of products" class="suggestion" href="#">
+            <a (click)="redirectToProductDisplay(prod.name,prod.sourceId)" *ngFor="let prod of products" class="suggestion">
                 <img class="suggestion-image" height="34" src="{{prod.imageUrl}}">
                 <div class="suggestion-title u-textTruncate">{{prod.name}}</div>
                 <div class="suggestion-category">Shopping</div>
                 <div class="suggestion-extra text-truncate">{{prod.description}}</div>
             </a>
-            <!-- <a class="suggestion" href="#">
-                <img class="suggestion-image" height="34" src="assets/images/sample-cat-1.png">
-                <div class="suggestion-title u-textTruncate">Name of the shop</div>
-                <div class="suggestion-category">Shopping</div>
-                <div class="suggestion-extra text-truncate">Lorem ipsum dolor sit amet.</div>
-            </a>
-            <a class="suggestion" href="#">
-                <img class="suggestion-image" height="34" src="assets/images/sample-cat-1.png">
-                <div class="suggestion-title u-textTruncate">Name of the shop</div>
-                <div class="suggestion-category">Shopping</div>
-                <div class="suggestion-extra text-truncate">Lorem ipsum dolor sit amet.</div>
-            </a> -->
         </div>
         <!-- /.master-search-suggestions -->
 

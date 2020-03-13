@@ -758,3 +758,82 @@ a {
 .padding-30 {
     padding: 30px;
 }
+
+.padding-15 {
+    padding: 15px;
+}
+
+.full-screen-modal {
+    height: 100vh !important;
+    width: 100vw !important;
+    max-width: none !important;
+}
+
+.full-screen-modal .mat-dialog-container {
+    max-width: none;
+    padding: 0px !important;
+    display: inline-table !important;
+    background-color: #fff;
+}
+
+.cdk-overlay-container {
+    position: fixed;
+    z-index: 2001 !important;
+}
+
+.padding-100 {
+    padding: 100px;
+}
+
+.div_modalHeader {
+    display: flex;
+    align-items: center;
+    align-self: stretch;
+    justify-content: center;
+    padding-top: 15px;
+    /* border-bottom: 1px solid #ccc; */
+}
+
+.heading_modal {
+    line-height: 32px;
+    font-size: 24px;
+    margin: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-weight: inherit;
+    /* line-height: 16px; */
+}
+
+.btn_close_modal {
+    position: absolute !important;
+    display: flex;
+    align-items: center;
+    /* top: 50%; */
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+    right: 21px;
+    cursor: pointer;
+}
+
+.btn_close_modal span {
+    font-size: 50px;
+    position: relative;
+    float: left;
+    width: 100%;
+    height: 100%;
+    top: 32px;
+    left: 0;
+    font-weight: 200;
+}
+
+.btn-addreview {
+    min-width: 210px;
+}
+
+.div_addreview {
+    margin-top: 20px;
+}
+
+.margin-l-10 {
+    margin-left: 10px;
+}
