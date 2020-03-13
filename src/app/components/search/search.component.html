@@ -17,7 +17,7 @@
 
         <!-- Suggestions -->
         <div *ngIf="suggestionsVisibility" class="master-search-suggestions">
-            <a (click)="redirectToProductDisplay(prod.name,prod.sourceId)" *ngFor="let prod of products" class="suggestion">
+            <a (click)="redirectToProductDisplay(prod.name,prod._id)" *ngFor="let prod of products" class="suggestion">
                 <img class="suggestion-image" height="34" src="{{prod.imageUrl}}">
                 <div class="suggestion-title u-textTruncate">{{prod.name}}</div>
                 <div class="suggestion-category">Shopping</div>

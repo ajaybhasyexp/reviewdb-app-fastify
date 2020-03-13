@@ -7,6 +7,7 @@ import { debug } from 'util';
 import { Product } from '../../models/product';
 import { Subject } from 'rxjs';
 import { Router } from '@angular/router';
+import { Data } from '../../core/helpers/data';
 
 @Component({
   selector: 'app-search',
@@ -19,7 +20,7 @@ export class SearchComponent implements OnInit {
   searchText: string;
   products: Array<Product>;
   searchTerm$ = new Subject<string>();
-  constructor(private searchService: SearchService, private router: Router) {
+  constructor(private searchService: SearchService, private router: Router, private data: Data) {
     this.searchService.search(this.searchTerm$).subscribe(response => {
       if (response) {
         this.suggestionsVisibility = true;
@@ -47,6 +48,9 @@ export class SearchComponent implements OnInit {
     $('#master-categories').slideToggle();
   }
   redirectToProductDisplay(name: string, id: string) {
+    this.data.storage = {
+      pid: id
+    };
     this.router.navigate(['/product/' + name]);
   }
 
