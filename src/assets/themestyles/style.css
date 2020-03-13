@@ -747,6 +747,16 @@ a {
 
 .img_product-inproductlisting {
     max-width: 100%;
+    /* max-width: 70%; */
+    /* max-height: 50%; */
+    /* max-width: 250px; */
+    /* min-width: 250px; */
+    max-height: 100%;
+}
+
+.div_img_container {
+    height: 410px;
+    width: 410px;
 }
 
 .span_custname {

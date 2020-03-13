@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialogRef } from '@angular/material';
+import { Review } from '../../models/review';
 
 @Component({
   selector: 'app-add-review',
@@ -7,6 +8,7 @@ import { MatDialogRef } from '@angular/material';
   styleUrls: ['./add-review.component.css']
 })
 export class AddReviewComponent implements OnInit {
+  selectedReview: Review;
 
   constructor(public dialogRef: MatDialogRef<AddReviewComponent>) { }
 

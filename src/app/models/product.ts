@@ -8,4 +8,5 @@ export class Product {
     image_800: string;
     specs: [string];
     sourceId: string;
+    category: object;
 }
