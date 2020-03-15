@@ -34,7 +34,6 @@ export class AddReviewComponent implements OnInit {
     });
     if (this.data.action === ClientAction.Add) {
       if (Utility.isValidInstance(this.data)) {
-        debugger;
         this.selectedProduct = this.data.product;
         this.userId = this.data.uid;
       }

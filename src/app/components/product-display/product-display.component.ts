@@ -8,6 +8,8 @@ import { ActivatedRoute } from '@angular/router';
 import { AuthService, SocialUser } from 'angularx-social-login';
 import { TopNavComponent } from '../top-nav/top-nav.component';
 import { ClientAction } from 'src/app/enums/client-action.enum';
+import { Review } from 'src/app/models/review';
+import { ReviewService } from 'src/app/services/review.service';
 @Component({
   selector: 'app-product-display',
   templateUrl: './product-display.component.html',
@@ -18,18 +20,21 @@ export class ProductDisplayComponent implements OnInit {
   productId: string;
   user: SocialUser;
   loggedIn: boolean;
+  reviews: Review[] = new Array<Review>();
 
   constructor(
     private productService: ProductService,
     public dialog: MatDialog,
     private route: ActivatedRoute,
-    private authService: AuthService) { }
+    private authService: AuthService,
+    private reviewService: ReviewService) { }
 
   ngOnInit() {
     this.productId = this.route.snapshot.paramMap.get('id');
     if (Utility.isValidObjectInstance(this.productId)) {
       this.productService.getProductById(this.productId).subscribe(response => {
         this.selectedProduct = response;
+        this.getReviews(this.selectedProduct._id);
       });
     }
     this.authService.authState.subscribe((user) => {
@@ -42,6 +47,12 @@ export class ProductDisplayComponent implements OnInit {
     const dialogRef = this.dialog.open(AddReviewComponent, {
       panelClass: 'full-screen-modal',
       data: { product: this.selectedProduct, uid: this.user.id, action: ClientAction.Add }
+    });
+  }
+
+  getReviews(productId) {
+    this.reviewService.getProductReviews(productId).subscribe(response => {
+      this.reviews = response;
     });
   }
 

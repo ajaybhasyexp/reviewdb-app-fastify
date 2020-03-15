@@ -20,10 +20,17 @@ export class ReviewService extends HttpBaseService {
 
     saveReview(review: Review) {
         const url = `${this.baseUrl}/reviews`;
-        debugger;
         return this.httpClient.post(url, review).pipe(
             map(this.extractData),
             catchError(this.handleError)
         );
+    }
+
+    getProductReviews(productId): Observable<Review[]> {
+        const url = `${this.baseUrl}/reviews/${productId}`;
+        return this.httpClient.get(url).pipe(
+            map(this.extractData),
+            catchError(this.handleError));
+
     }
 }
