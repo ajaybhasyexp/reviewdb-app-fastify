@@ -1,0 +1,36 @@
+<ng-container *ngIf="allFiles.length > 0">
+    <div class="file_thumbnail col-lg-2" *ngFor="let file of allFiles; let i=index">
+        <img [src]="file.img">
+        <div class="overlay">
+            <a class="icon" title="Remove" (click)="removeSelectedImage(i)">
+                <i class="fa fa-times-circle" aria-hidden="true"></i>
+            </a>
+        </div>
+    </div>
+</ng-container>
+
+<div class="col-lg-2 draggablediv">
+    <div draggable="true" ngClass="{{dragAreaClass}}">
+        <div class="row">
+            <div class="text-center margin-t-6-percent">
+                <a href="javascript:void(0)" (click)="file.click()">
+                    <i class="fa fa-plus" aria-hidden="true"></i>
+                </a>
+                <input class="display-none" type="file" #file [multiple]="false" onclick="this.value = null"
+                    (change)="onFileChange($event)" />
+            </div>
+        </div>
+    </div>
+</div>
+<!-- <div class="row error" *ngIf="errors.length > 0">
+    <ul>
+        <li *ngFor="let err of errors">{{err}}</li>
+    </ul>
+</div> -->
+
+<!-- <div *ngIf="allFiles.length > 0" class="fileRepeater_parentDiv">
+    <div *ngFor="let file of allFiles; let i=index" class="fileRepeater">
+        <span class="trim-text fileName" title="{{file.name}}">{{file.name}}</span>
+        <span (click)="deleteUploadedFile(i)" class="span_trash"><i class="fa fa-trash"></i></span>
+    </div>
+</div> -->

@@ -773,10 +773,37 @@ a {
     padding: 15px;
 }
 
+.padding-0 {
+    padding: 0px !important;
+}
+
+.color-black {
+    color: black;
+}
+
+.fa-font-size-25 {
+    font-size: 25px !important;
+}
+
+.cdk-global-scrollblock {
+    overflow-y: auto !important;
+}
+
+.img_thumbnail {
+    max-width: 75px;
+    margin-right: 20px;
+}
+
+.border-bottom {
+    border-bottom: 1px solid #ccc;
+}
+
 .full-screen-modal {
     height: 100vh !important;
     width: 100vw !important;
     max-width: none !important;
+    overflow-y: scroll;
+    overflow-x: hidden;
 }
 
 .full-screen-modal .mat-dialog-container {
@@ -791,8 +818,16 @@ a {
     z-index: 2001 !important;
 }
 
+.text-transform {
+    text-transform: capitalize;
+}
+
 .padding-100 {
     padding: 100px;
+}
+
+.padding-10 {
+    padding: 10px;
 }
 
 .div_modalHeader {
@@ -846,4 +881,82 @@ a {
 
 .margin-l-10 {
     margin-left: 10px;
+}
+
+.display-none {
+    display: none !important;
+}
+
+.margin-top-10 {
+    margin-top: 10px;
+}
+
+.draggablediv {
+    float: left;
+    /* clear: both; */
+    padding: 0px;
+    margin-top: 10px;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    transition: .3s ease;
+    background-color: rgba(48, 52, 48, 0.8);
+}
+
+.file_thumbnail:hover .overlay {
+    opacity: 1;
+}
+
+.icon {
+    color: white !important;
+    font-size: 22px;
+    position: absolute;
+    top: 20px;
+    right: 0px;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    text-align: center;
+    cursor: pointer !important;
+}
+
+.file_thumbnail {
+    border: 3px solid #bbb;
+    min-height: 160px;
+    background-color: #fff;
+    margin-right: 10px;
+    display: inline-flex;
+    padding: 0px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.file_thumbnail img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.dragarea {
+    font-size: 24px;
+    border: 3px dotted #bbb;
+    padding: 60px;
+    background-color: #fff;
+    color: #bbb;
+    min-height: 160px;
+}
+
+.droparea {
+    font-size: 24px;
+    border: 3px dashed #bbb;
+    padding: 60px;
+    background-color: #eff;
+    color: #aaa;
+    min-height: 160px;
 }

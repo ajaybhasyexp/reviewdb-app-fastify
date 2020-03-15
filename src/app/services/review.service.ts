@@ -31,6 +31,9 @@ export class ReviewService extends HttpBaseService {
         return this.httpClient.get(url).pipe(
             map(this.extractData),
             catchError(this.handleError));
+    }
 
+    saveImages(formData) {
+        this.httpClient.post('https://api.cloudinary.com/v1_1/ajaybhasy/upload', formData, { reportProgress: true });
     }
 }

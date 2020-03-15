@@ -29,6 +29,7 @@ import { RatingComponent } from './components/rating/rating.component';
 import { ProductDisplayComponent } from './components/product-display/product-display.component';
 import { MaterialModule } from './material.module';
 import { Data } from './core/helpers/data';
+import { FileUploadComponent } from './components/fileUpload/file-upload.component';
 
 const config = new AuthServiceConfig([
   // {
@@ -53,7 +54,8 @@ export function provideConfig() {
     AddProductComponent,
     AddReviewComponent,
     RatingComponent,
-    ProductDisplayComponent
+    ProductDisplayComponent,
+    FileUploadComponent
   ],
   imports: [
     BrowserModule,
