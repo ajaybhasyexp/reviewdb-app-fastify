@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, APP_INITIALIZER } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SearchComponent } from './components/search/search.component';
@@ -22,6 +22,7 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { from } from 'rxjs';
 import { SearchService } from './services/search.service';
 import { UserService } from './services/user.service';
+import { ReviewService } from './services/review.service';
 import { SocialLoginModule, AuthServiceConfig, FacebookLoginProvider } from 'angularx-social-login';
 import { AddReviewComponent } from './components/add-review/add-review.component';
 import { RatingComponent } from './components/rating/rating.component';
@@ -63,6 +64,7 @@ export function provideConfig() {
     MatFormFieldModule,
     MatInputModule,
     FormsModule,
+    ReactiveFormsModule.withConfig({ warnOnNgModelWithFormControl: 'never' }),
     HttpClientModule,
     SocialLoginModule,
     MaterialModule
@@ -83,6 +85,7 @@ export function provideConfig() {
     HttpBaseService,
     SearchService,
     UserService,
+    ReviewService,
     Data
   ],
   bootstrap: [AppComponent]

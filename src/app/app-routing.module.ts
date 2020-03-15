@@ -18,7 +18,7 @@ const routes: Routes = [
     component: AddReviewComponent
   },
   {
-    path: 'product/:name',
+    path: 'product/:name/:id',
     component: ProductDisplayComponent
   }
 ];

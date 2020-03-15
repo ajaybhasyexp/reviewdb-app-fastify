@@ -7,4 +7,5 @@ export class Review {
     imageUrl: string;
     updated: Date;
     created: Date;
+    userSocialId: string;
 }

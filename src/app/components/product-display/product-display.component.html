@@ -12,7 +12,7 @@
                     class="btn btn-default btn-xs margin-3">{{spec}}</button>
             </div>
             <div class="div_addreview">
-                <button (click)="addReview()" class="btn btn-default btn-addreview">
+                <button *ngIf="loggedIn" (click)="addReview()" class="btn btn-default btn-addreview">
                     <span><i class="fa fa-plus-square" aria-hidden="true"></i></span>
                     <span class="margin-l-10"> Add Review</span>
                 </button>

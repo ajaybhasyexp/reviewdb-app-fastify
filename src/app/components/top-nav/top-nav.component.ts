@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Inject } from '@angular/core';
 import { AuthService, SocialUser, FacebookLoginProvider } from 'angularx-social-login';
 import { UserService } from 'src/app/services/user.service';
 import { User } from 'src/app/models/user';
@@ -8,6 +8,7 @@ import { User } from 'src/app/models/user';
   templateUrl: './top-nav.component.html',
   styleUrls: ['./top-nav.component.css']
 })
+
 export class TopNavComponent implements OnInit {
 
   public user: SocialUser;
