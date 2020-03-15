@@ -44,7 +44,9 @@ export class SearchComponent implements OnInit {
     $('#master-categories').slideToggle();
   }
   redirectToProductDisplay(name: string, id: string) {
-    this.router.navigate([`/product/${name}/${id}`]);
+    const routeName = name.replace(/( )+/g, '-');
+    const productUrl = `/product/${routeName}/${id}`;
+    this.router.navigate([productUrl]);
   }
 
   searchProds() {
