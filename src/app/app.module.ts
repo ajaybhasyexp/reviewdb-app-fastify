@@ -23,6 +23,7 @@ import { from } from 'rxjs';
 import { SearchService } from './services/search.service';
 import { UserService } from './services/user.service';
 import { ReviewService } from './services/review.service';
+import { ImageService } from './services/image.service';
 import { SocialLoginModule, AuthServiceConfig, FacebookLoginProvider } from 'angularx-social-login';
 import { AddReviewComponent } from './components/add-review/add-review.component';
 import { RatingComponent } from './components/rating/rating.component';
@@ -88,6 +89,7 @@ export function provideConfig() {
     SearchService,
     UserService,
     ReviewService,
+    ImageService,
     Data
   ],
   bootstrap: [AppComponent]

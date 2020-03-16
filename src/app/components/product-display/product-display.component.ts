@@ -52,6 +52,7 @@ export class ProductDisplayComponent implements OnInit {
 
   getReviews(productId) {
     this.reviewService.getProductReviews(productId).subscribe(response => {
+      debugger;
       this.reviews = response;
     });
   }

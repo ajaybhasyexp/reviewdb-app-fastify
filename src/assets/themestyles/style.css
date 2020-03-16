@@ -792,6 +792,7 @@ a {
 .img_thumbnail {
     max-width: 75px;
     margin-right: 20px;
+    max-height: 75px;
 }
 
 .border-bottom {

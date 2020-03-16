@@ -8,6 +8,7 @@ import { Utility } from 'src/app/core/helpers/utililies';
 import { RatingComponent } from '../rating/rating.component';
 import { ReviewService } from 'src/app/services/review.service';
 import { FileData } from 'src/app/models/fileData';
+import { ImageService } from 'src/app/services/image.service';
 
 @Component({
   selector: 'app-add-review',
@@ -20,14 +21,14 @@ export class AddReviewComponent implements OnInit {
   selectedProduct: Product;
   userId: string;
   @ViewChild(RatingComponent, { static: false }) rating: RatingComponent;
-  formData: FormData = new FormData();
   files: FileData[] = new Array<FileData>();
 
   constructor(
     public dialogRef: MatDialogRef<AddReviewComponent>,
     private formBuilder: FormBuilder,
     @Inject(MAT_DIALOG_DATA) public data: any,
-    private reviewService: ReviewService) { }
+    private reviewService: ReviewService,
+    private imageService: ImageService) { }
 
   ngOnInit() {
     this.addReviewForm = this.formBuilder.group({
@@ -41,7 +42,6 @@ export class AddReviewComponent implements OnInit {
         this.userId = this.data.uid;
       }
     }
-    this.formData.append('tags', 'review_images');
   }
 
   CloseAddReviewModal() {
@@ -50,22 +50,27 @@ export class AddReviewComponent implements OnInit {
 
   saveReview() {
     if (this.addReviewForm.valid) {
-      this.reviewService.saveImages(this.formData);
-      this.selectedReview.rating = this.rating.selectedValue;
-      this.selectedReview.userSocialId = this.userId;
-      this.selectedReview.productId = this.selectedProduct._id;
-      this.reviewService.saveReview(this.selectedReview).subscribe(respone => {
-        this.CloseAddReviewModal();
-      });
+      if (this.files.length > 0) {
+        this.imageService.saveReviewImages(this.files).subscribe(response => {
+          this.selectedReview.imageUrl = response.secure_url;
+          this.saveReviewObject();
+        });
+      } else {
+        this.saveReviewObject();
+      }
     }
+  }
 
+  saveReviewObject() {
+    this.selectedReview.rating = this.rating.selectedValue;
+    this.selectedReview.userSocialId = this.userId;
+    this.selectedReview.productId = this.selectedProduct._id;
+    this.reviewService.saveReview(this.selectedReview).subscribe(respone => {
+      this.CloseAddReviewModal();
+    });
   }
 
   uploadedImagesOnSubscribe(event) {
-    // this.files.push(event);
-    event.forEach(element => {
-      this.formData.append('file', element.img);
-    });
-
+    this.files = event;
   }
 }
