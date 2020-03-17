@@ -9,4 +9,5 @@ export class Product {
     specs: [string];
     sourceId: string;
     category: object;
+    avgRating: number;
 }
