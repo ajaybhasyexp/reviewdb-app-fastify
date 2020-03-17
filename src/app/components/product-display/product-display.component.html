@@ -6,6 +6,7 @@
         </div>
         <div class="col-lg-7">
             <h4 class="media-heading"><a class="text-deoration-none" href="#">{{selectedProduct.name}}</a></h4>
+            <p>in <a href="">{{snakeCaseConvertor(selectedProduct.category.categoryName)}}</a></p>
             <p class="margin-top-20">{{selectedProduct.description}}</p>
             <div>
                 <button *ngFor="let spec of selectedProduct.specs" type="button"

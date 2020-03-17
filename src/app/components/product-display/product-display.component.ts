@@ -42,17 +42,35 @@ export class ProductDisplayComponent implements OnInit {
       this.loggedIn = (user != null);
     });
   }
+  snakeCaseConvertor(name) {
+    if (name.includes('_')) {
+      const splitArray = name.split('_');
+      let catName = '';
+      splitArray.forEach(element => {
+        catName += ' ' + element.charAt(0).toUpperCase() + element.slice(1);
+      });
+      return catName.trim();
+    } else {
+      return name;
+    }
+
+  }
 
   addReview() {
     const dialogRef = this.dialog.open(AddReviewComponent, {
       panelClass: 'full-screen-modal',
       data: { product: this.selectedProduct, uid: this.user.id, action: ClientAction.Add }
     });
+
+    dialogRef.afterClosed().subscribe(result => {
+      if (Utility.isValidInstance(result)) {
+        this.getReviews(this.selectedProduct._id);
+      }
+    });
   }
 
   getReviews(productId) {
     this.reviewService.getProductReviews(productId).subscribe(response => {
-      debugger;
       this.reviews = response;
     });
   }
