@@ -39,4 +39,11 @@ export class ReviewService extends HttpBaseService {
             catchError(this.handleError)
         );
     }
+
+    getUserProductReview(productId, userId) {
+        const url = `${this.baseUrl}/${userId}/reviews/${productId}`;
+        return this.httpClient.get(url).pipe(
+            map(this.extractData),
+            catchError(this.handleError));
+    }
 }
