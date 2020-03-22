@@ -56,5 +56,10 @@ export class SearchComponent implements OnInit {
     // },
     //   error => { });
   }
+  redirectToProductByCat(catId :string,catName :string) {
+    const name = catName.replace(/( )+/g, '-');
+    const productListUrl= `/category/${name}/products/${catId}`
+    this.router.navigate([productListUrl]);
+  }
 
 }

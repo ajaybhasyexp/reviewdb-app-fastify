@@ -30,5 +30,12 @@ export class ProductService extends HttpBaseService {
             map(this.extractData),
             catchError(this.handleError));
     }
+    getProductByCatId(catId:string,limit:number): Observable<Product[]> {
+        const url = `${this.baseUrl}/productsByCategory/${catId}/${limit}`;
+        return this.httpClient.get(url).pipe(
+            map(this.extractData),
+            catchError(this.handleError));
+    }
+    
 
 }

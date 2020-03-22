@@ -4,7 +4,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SearchComponent } from './components/search/search.component';
-import { TopNavComponent } from './components/top-nav/top-nav.component';
+import { ProductListComponent } from './components/product-list/product-list.component';
+import { TopNavComponent } from './components/top-nav/top-nav.component'; 
 import { AddProductComponent } from './components/add-product/add-product.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatChipsModule } from '@angular/material/chips';
@@ -56,7 +57,8 @@ export function provideConfig() {
     AddReviewComponent,
     RatingComponent,
     ProductDisplayComponent,
-    FileUploadComponent
+    FileUploadComponent,
+    ProductListComponent
   ],
   imports: [
     BrowserModule,
