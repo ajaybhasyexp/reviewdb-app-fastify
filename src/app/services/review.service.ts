@@ -39,6 +39,13 @@ export class ReviewService extends HttpBaseService {
             catchError(this.handleError)
         );
     }
+
+    getUserProductReview(productId, userId) {
+        const url = `${this.baseUrl}/${userId}/reviews/${productId}`;
+        return this.httpClient.get(url).pipe(
+            map(this.extractData),
+            catchError(this.handleError));
+    }
     getReviewsByCategory(catId:string,limit:number): Observable<Review[]> {
         const url = `${this.baseUrl}/reviewsByCategory/${catId}/${limit}`;
         console.log(url);
