@@ -1,0 +1,177 @@
+<div class="container">        
+    <div class="master-search-inner">
+        <div class="form-group">
+            <div class="input-group master-search-inner">
+                <input type="text" class="form-control" placeholder="eg: Avengers Age of Ultron Review">
+                <div class="input-group-btn">
+                    <button type="button" class="btn btn-default" id="master-category-dropdown" ><i class="fa fa-chevron-down"></i></button>
+                    <button type="button" class="btn btn-default"><i class="fa fa-search"></i></button>
+                </div>
+            </div>
+        </div>        
+
+        <!-- Master Categories -->
+        <div class="master-categories clearfix" id="master-categories" style="display:none;">
+            <a href="#" class="master-category">
+                <div class="master-category-content">
+                    <img src="assets/images/sample-cat-1.png" />
+                    <div class="overlay"><div class="title">Shopping</div></div>
+                </div>
+            </a>
+            <a href="#" class="master-category">
+                <div class="master-category-content">
+                    <img src="assets/images/sample-cat-2.png" />
+                    <div class="overlay"><div class="title">Photography</div></div>
+                </div>
+            </a>
+            <a href="#" class="master-category">
+                <div class="master-category-content">
+                    <img src="assets/images/sample-cat-3.png" />
+                    <div class="overlay"><div class="title">Travel</div></div>
+                </div>
+            </a>
+            <a href="#" class="master-category">
+                <div class="master-category-content">
+                    <img src="assets/images/sample-cat-4.png" />
+                    <div class="overlay"><div class="title">Again Shopping</div></div>
+                </div>
+            </a>
+            <a href="#" class="master-category">
+                <div class="master-category-content">
+                    <img src="assets/images/sample-cat-5.png" />
+                    <div class="overlay"><div class="title">Food</div></div>
+                </div>
+            </a>
+            <a href="#" class="master-category">
+                <div class="master-category-content">
+                    <img src="http://www.dwuser.com/education/content/creating-responsive-tiled-layout-with-pure-css/images/demo/4.jpg" />
+                    <div class="overlay"><div class="title">The garden shop</div></div>
+                </div>
+            </a>
+            <a href="#" class="master-category">
+                <div class="master-category-content">
+                    <img src="http://www.dwuser.com/education/content/creating-responsive-tiled-layout-with-pure-css/images/demo/5.jpg" />
+                    <div class="overlay"><div class="title">Spring daffodils</div></div>
+                </div>
+            </a>
+            <a href="#" class="master-category">
+                <div class="master-category-content">
+                    <img src="http://www.dwuser.com/education/content/creating-responsive-tiled-layout-with-pure-css/images/demo/6.jpg" />
+                    <div class="overlay"><div class="title">Iris along the path</div></div>
+                </div>
+            </a>
+            <a href="#" class="master-category">
+                <div class="master-category-content">
+                    <img src="http://www.dwuser.com/education/content/creating-responsive-tiled-layout-with-pure-css/images/demo/8.jpg" />
+                    <div class="overlay"><div class="title">The garden blueprint</div></div>
+                </div>
+            </a>
+            <a href="#" class="master-category">
+                <div class="master-category-content">
+                    <img src="http://www.dwuser.com/education/content/creating-responsive-tiled-layout-with-pure-css/images/demo/9.jpg" />
+                    <div class="overlay"><div class="title">The patio</div></div>
+                </div>
+            </a>
+        </div><!-- /.master-categories -->
+    </div>
+
+    <div class="row">
+        <div class="col-md-9">
+            <h4 class="sub-heading">Showing Matching Results</h4>
+            <hr>
+            <div class="search-results">
+                <div *ngFor="let prod of products">
+                    <div class="media search-result">
+                        <div class="media-left">
+                            <a href="#">
+                                <img class="media-object" src={{prod.imageUrl}} alt="Category Image">
+                            </a>
+                        </div>
+                        <div class="media-body">
+                            <h4 class="media-heading"><a >{{prod.name}}</a></h4>
+                            <div class="progress">
+                                <div class="progress-bar progress-bar-success" style="width: 70%">
+                                    <span class="sr-only">35% Complete (success)</span>
+                                </div>
+                                <div class="progress-bar progress-bar-warning" style="width: 15%">
+                                    <span class="sr-only">20% Complete (warning)</span>
+                                </div>
+                                <div class="progress-bar progress-bar-danger" style="width: 15%">
+                                    <span class="sr-only">10% Complete (danger)</span>
+                                </div>
+                            </div>
+                            <p>{{prod.description}}</p>
+                            <p>
+                                <button type="button" title="Views" class="btn btn-default btn-xs"><i class="fa fa-eye"></i> 126</button>
+                            </p>
+
+                        </div>
+                    </div>    
+                </div>
+            </div>
+            <!-- /.aside-block -->
+        </div>
+        <div class="col-md-3">
+            <div class="aside-block">
+                <div class="aside-block-heading">Recent Reviews</div>
+                <div *ngFor="let review of reviews">
+                    <div class="media">
+                        <div class="media-left">
+                            <a href="#">
+                                <img class="media-object" src="assets/images/sample-cat-3.png" alt="Category Image">
+                            </a>
+                        </div>
+                        <div class="media-body">
+                            <h4 class="media-heading"><a href="#">{{review.title}}</a></h4>
+                            <p class="aside-content">{{review.detailedDescription}}</p>
+                            <div class="aside-content-time-stamp">{{review.updated | date: 'dd-MM-yyyy'}}</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>    
+            <!-- /.aside-block -->
+        <div class="col-md-3">
+            <div class="aside-block">
+                <div class="aside-block-heading">Recent Reviews</div>
+                <div class="media">
+                    <div class="media-left">
+                        <a href="#">
+                            <img class="media-object" src="assets/images/sample-cat-1.png" alt="Category Image">
+                        </a>
+                    </div>
+                    <div class="media-body">
+                        <h4 class="media-heading"><a href="#">Travel</a></h4>
+                        <p class="aside-content">Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
+                        <div class="aside-content-time-stamp">12 June 2015, 12:30PM</div>
+                    </div>
+                </div>
+                <div class="media">
+                    <div class="media-left">
+                        <a href="#">
+                            <img class="media-object" src="assets/images/sample-cat-2.png" alt="Category Image">
+                        </a>
+                    </div>
+                    <div class="media-body">
+                        <h4 class="media-heading"><a href="#">Travel</a></h4>
+                        <p class="aside-content">Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
+                        <div class="aside-content-time-stamp">12 June 2015, 12:30PM</div>
+                    </div>
+                </div>
+                <div class="media">
+                    <div class="media-left">
+                        <a href="#">
+                            <img class="media-object" src="assets/images/sample-cat-3.png" alt="Category Image">
+                        </a>
+                    </div>
+                    <div class="media-body">
+                        <h4 class="media-heading"><a href="#">Photgraphy</a></h4>
+                        <p class="aside-content">Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
+                        <div class="aside-content-time-stamp">12 June 2015, 12:30PM</div>
+                    </div>
+                </div>
+            </div>
+         </div>   
+    </div>       
+</div>
+

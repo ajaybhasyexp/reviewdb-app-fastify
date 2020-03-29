@@ -2,7 +2,7 @@ export class Review {
     title: string;
     sideNote: string;
     detailedDescription: string;
-    productId: string;
+    product: object;
     rating: number;
     imageUrl: string;
     updated: Date;
