@@ -8,7 +8,7 @@
             <h4 class="media-heading"><a class="text-deoration-none" href="#">{{selectedProduct?.name}}</a></h4>
             <p>in <a href="">{{selectedProduct?.category?.categoryName}}</a></p>
             <p class="margin-top-20">{{selectedProduct?.description}}</p>
-            <p>Average Rating : {{selectedProduct?.avgRating}}/5</p>
+            <p>Average Rating : {{displayAvgReview()}}</p>
             <div>
                 <button *ngFor="let spec of selectedProduct?.specs" type="button"
                     class="btn btn-default btn-xs margin-3">{{spec}}</button>

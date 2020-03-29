@@ -64,7 +64,7 @@ export class AddReviewComponent implements OnInit {
   saveReviewObject() {
     this.selectedReview.rating = this.rating.selectedValue;
     this.selectedReview.userSocialId = this.userId;
-    this.selectedReview.productId = this.selectedProduct._id;
+    this.selectedReview.product = this.selectedProduct;
     this.reviewService.saveReview(this.selectedReview).subscribe(respone => {
       this.CloseAddReviewModal();
     });

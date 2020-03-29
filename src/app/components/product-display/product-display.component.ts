@@ -41,9 +41,8 @@ export class ProductDisplayComponent implements OnInit {
           this.getReviews(this.selectedProduct._id);
           if (this.loggedIn) {
             this.reviewService.getUserProductReview(this.productId, this.user.id).subscribe(resp => {
-              if (resp > 0) {
-                this.reviewWritten = true;
-              }
+              console.log(resp);
+              this.setReviewWritten(resp > 0);
             });
           }
         });
@@ -63,11 +62,26 @@ export class ProductDisplayComponent implements OnInit {
       }
     });
   }
+  setReviewWritten(result) {
+    this.reviewWritten = result;
+  }
 
   getReviews(productId) {
     this.reviewService.getProductReviews(productId).subscribe(response => {
-      this.reviews = response;
+      this.setReviews(response);
     });
+  }
+
+  setReviews(reviews: Array<Review>) {
+    this.reviews = reviews;
+  }
+
+  displayAvgReview() {
+    if (Utility.isValidInstance(this.selectedProduct) && this.selectedProduct.avgRating < 0) {
+      return 'Be the first one to review it.';
+    } else {
+      return `${this.selectedProduct}/5`;
+    }
   }
 
 }
