@@ -20,10 +20,7 @@ export class TopNavComponent implements OnInit {
     this.authService.authState.subscribe((user) => {
       this.user = user;
       this.loggedIn = (user != null);
-      if (!this.loggedIn) {
-        this.signInWithFB();
-      }
-    });
+          });
   }
 
   signOut(): void {

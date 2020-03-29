@@ -21,6 +21,7 @@ export class ProductDisplayComponent implements OnInit {
   user: SocialUser;
   loggedIn: boolean;
   reviews: Review[] = new Array<Review>();
+  reviewWritten: boolean;
 
   constructor(
     private productService: ProductService,
@@ -31,29 +32,23 @@ export class ProductDisplayComponent implements OnInit {
 
   ngOnInit() {
     this.productId = this.route.snapshot.paramMap.get('id');
-    if (Utility.isValidObjectInstance(this.productId)) {
-      this.productService.getProductById(this.productId).subscribe(response => {
-        this.selectedProduct = response;
-        this.getReviews(this.selectedProduct._id);
-      });
-    }
     this.authService.authState.subscribe((user) => {
       this.user = user;
       this.loggedIn = (user != null);
+      if (Utility.isValidObjectInstance(this.productId)) {
+        this.productService.getProductById(this.productId).subscribe(response => {
+          this.selectedProduct = response;
+          this.getReviews(this.selectedProduct._id);
+          if (this.loggedIn) {
+            this.reviewService.getUserProductReview(this.productId, this.user.id).subscribe(resp => {
+              if (resp > 0) {
+                this.reviewWritten = true;
+              }
+            });
+          }
+        });
+      }
     });
-  }
-  snakeCaseConvertor(name) {
-    if (name.includes('_')) {
-      const splitArray = name.split('_');
-      let catName = '';
-      splitArray.forEach(element => {
-        catName += ' ' + element.charAt(0).toUpperCase() + element.slice(1);
-      });
-      return catName.trim();
-    } else {
-      return name;
-    }
-
   }
 
   addReview() {

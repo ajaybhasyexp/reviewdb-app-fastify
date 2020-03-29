@@ -79,4 +79,17 @@ export class Utility {
         }
         return data;
     }
+
+    public static snakeCaseConvertor(name: string): string {
+        if (name.includes('_')) {
+            const splitArray = name.split('_');
+            let catName = '';
+            splitArray.forEach(element => {
+                catName += ' ' + element.charAt(0).toUpperCase() + element.slice(1);
+            });
+            return catName.trim();
+        } else {
+            return name;
+        }
+    }
 }
